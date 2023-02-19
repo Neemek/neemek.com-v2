@@ -50,6 +50,7 @@ export default function Home() {
         <meta name="description" content="Neemek's home website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <OGHead description="Neemek's website"></OGHead>
       </Head>
       <>
         <SideBar></SideBar>
@@ -73,7 +74,17 @@ export function SideBar() {
   </div>)
 }
 
-
+export function OGHead({title='👉neemek.com👈', description='', type='website', path='/'}) {
+  return (
+    <>
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={`https://neemek.com${path}`} />
+      <meta property="og:site_name" content="Neemek.com" />
+    </>
+  )
+}
 
 function Character({children: char, i}: {children: string, i: number}) {
   let [noun, setNoun] = useState(' ')
