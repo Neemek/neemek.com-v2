@@ -6,7 +6,7 @@ import { FaDiscord, FaStackOverflow, FaTwitter } from 'react-icons/fa'
 
 const inter = Inter({subsets: ['latin']})
 
-export default function ExternalLinksPage() {
+export default function AboutMePage() {
   return (
     <>
         <Head>

@@ -14,7 +14,7 @@ export default function ExternalLinksPage() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
           <title>External resources</title>
-          <OGHead title='Resources' description="Neemek's website" path="/external"></OGHead>
+          <OGHead title='Resources' description="My socials and links" path="/external"></OGHead>
         </Head>
         <>
         <SideBar></SideBar>
