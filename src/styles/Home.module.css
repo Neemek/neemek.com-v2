@@ -302,39 +302,31 @@
   z-index: 2;
 }
 
-.character:hover {
+.character:hover, .character:focus {
   rotate: 0deg;
 }
 
-.character>.desc {
-  translate: 0 53%;
-  font-size: 2rem;
-  display: none;
+.character>div {
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
   position: absolute;
-  z-index: 1;
-  transition: all 1s ease;
-  opacity: 0;
-  background-size: 0%;
+  display: inline-block;
 }
 
-.character:hover>.desc {
-  opacity: 1;
-  display: inline;
-  background-size: 100%;
-  animation: clipIn 1s ease-out both;
+.character>div>.desc {
+  display: inline-block;
+  translate: 0 53%;
+  font-size: 2rem;
+  z-index: 1;
+  transition: all .5s steps(10, end) .1s;
+  transform: translate(-100%, -80%);
+}
+
+.character:hover>div>.desc, .character:focus>div>.desc {
+  transform: translate(0%, -80%);
 }
 
 .absolute {
   position: absolute;
-}
-
-@keyframes clipIn {
-  from {
-   clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
-  }
-  to {
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-  }
 }
 
 .bottom {
@@ -343,4 +335,30 @@
 
 .noOverflow {
   overflow: hidden;
+}
+
+.moreSpace {
+  padding:  8rem;
+}
+
+.notFoundImage {
+  border-radius: 30px;
+}
+
+.spaceUp {
+  margin-top: 2rem;
+}
+
+.xList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.xList > * {
+  margin: 1rem;
+  transition: scale .1s ease-in-out;
+}
+.xList > *:hover {
+  scale: 1.1;
 }
