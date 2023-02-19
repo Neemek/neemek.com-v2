@@ -25,13 +25,17 @@ export default function ExternalLinksPage() {
               <h1 className={inter.className}><AnimatedGradientText from={(colors[5] ?? '')[0]} to={(colors[5] ?? '')[1]}>Kontact</AnimatedGradientText> me</h1>
             </div>
             <div style={{translate: '0 -1000%'}}>
-                <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <button onClick={() => {
                     if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
-                        fetch("https://data.neemek.com/email", {
+                        fetch("https://spaget.neemek.com/email", {
                             method: 'POST',
-                            body: email
+                            body: `{"email": "${email}"}`,
+                            headers: {
+                              "Content-Type": "application/json"
+                            }
                         })
+                        setEmail('')
                     }
                 }}>Submit</button>
             </div>
