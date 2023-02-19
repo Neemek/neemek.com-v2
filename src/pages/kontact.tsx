@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const inter = Inter({subsets: ['latin']})
 
-export default function ExternalLinksPage() {
+export default function ContactPage() {
     const [email, setEmail] = useState('')
 
   return (
