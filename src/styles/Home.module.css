@@ -294,8 +294,8 @@
   font-size: 4rem;
   text-align: center;
   font-weight: 700;
-  rotate: 90deg;
-  transition: rotate ease .2s;
+  transform: rotate(90deg);
+  transition: transform ease .2s;
   user-select: none;
   text-shadow: #ffffff70 3px;
   background: inherit;
@@ -303,7 +303,7 @@
 }
 
 .character:hover, .character:focus {
-  rotate: 0deg;
+  transform: rotate(0deg);
 }
 
 .character>div {

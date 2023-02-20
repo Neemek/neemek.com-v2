@@ -57,7 +57,7 @@ export default function Home() {
         <main className={styles.main}>
           <div /* className={styles.grid} */>
             <div className={styles.moreSpace}>
-              <h1>Hi! I&apos;m <AnimatedGradientText className={inter.className} from={'#0700b8'} to={'#00ff88'} cycleDuration={96}>Neemek</AnimatedGradientText></h1>
+              <h1>Hi! I&apos;m <AnimatedGradientText className={inter.className} to={'#0700b8'} from={'#00ff88'} cycleDuration={96}>Neemek</AnimatedGradientText></h1>
               <h2>💿Full-stack developer💾</h2>
               <h3 className={styles.spaceUp}><FaArrowLeft style={{translate: '0 10%'}}></FaArrowLeft> have a look</h3>
             </div>
@@ -101,7 +101,7 @@ function Character({children: char, i}: {children: string, i: number}) {
       {(
         colors[i] !== undefined 
         ? <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.05*description[i].length}s steps(${description[i].length}, end) .1s`}} from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>{description[i]}</AnimatedGradientText> 
-        : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.05*description[i].length}s steps(${description[i].length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
+        : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.05*noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
         )}
         </div>
     </div>)
