@@ -93,7 +93,9 @@ function Character({children: char, i}: {children: string, i: number}) {
   useEffect(() => setNoun(pickRandom(getNouns('e'))), [])
   
   return (
-    <div tabIndex={i+1} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{cursor: colors[i] ? 'pointer' : 'unset'}} onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname = destinations[i] ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} key={i}>
+      <a href={destinations[i]} className={styles.unLink}>
+    <div tabIndex={i+1} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{cursor: colors[i] ? 'pointer' : 'unset'}} /* onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname =  ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} */ key={i}>
+
       <AnimatedGradientText from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>
         {char}
         
@@ -105,7 +107,8 @@ function Character({children: char, i}: {children: string, i: number}) {
         : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.025*noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
         )}
         </div>
-    </div>)
+    </div>
+        </a>)
 }
 
 export function GradientText({children, to, from}: {children: ReactNode, to: string, from: string}): JSX.Element {
