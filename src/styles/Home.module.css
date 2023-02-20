@@ -294,16 +294,42 @@
   font-size: 4rem;
   text-align: center;
   font-weight: 700;
-  transform: rotate(90deg);
+  /*transform: rotate(90deg);*/
   transition: transform ease .2s;
   user-select: none;
-  text-shadow: #ffffff70 3px;
   background: inherit;
   z-index: 2;
+  animation-name: rotateDelayedOut;
+  animation-duration: .5s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
+
 .character:hover, .character:focus {
+  animation-name: rotateDelayed;
+  animation-timing-function: ease-in-out;
   transform: rotate(0deg);
+}
+
+
+@keyframes rotateDelayed {
+  0% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateDelayedOut {
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
 }
 
 .character>div {

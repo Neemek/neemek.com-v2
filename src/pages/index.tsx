@@ -101,8 +101,8 @@ function Character({children: char, i}: {children: string, i: number}) {
       <div>
       {(
         colors[i] !== undefined 
-        ? <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.05*description[i].length}s steps(${description[i].length}, end) .1s`}} from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>{description[i]}</AnimatedGradientText> 
-        : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.05*noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
+        ? <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.025*description[i].length}s steps(${description[i].length}, end) .1s`}} from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>{description[i]}</AnimatedGradientText> 
+        : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.025*noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
         )}
         </div>
     </div>)
