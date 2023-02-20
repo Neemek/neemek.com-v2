@@ -58,11 +58,11 @@ export default function Home() {
           <div /* className={styles.grid} */>
             <div className={styles.moreSpace}>
               <h1>Hi! I&apos;m <AnimatedGradientText className={inter.className} to={'#0700b8'} from={'#00ff88'} cycleDuration={96}>Neemek</AnimatedGradientText></h1>
-              <h2>💿Full-stack developer💾</h2>
+              <h2>💿 Full-stack developer 💾</h2>
               <h3 className={styles.spaceUp}><FaArrowLeft style={{translate: '0 10%'}}></FaArrowLeft> have a look</h3>
             </div>
           </div>
-          <h5 style={{opacity: 0.5, fontStyle: 'italic'}}>Not what you expected? Try the <a target={'_blank'} href='https://old.neemek.com/'>old site</a></h5>
+          {Date.now() - new Date(2023, 1, 20).getTime() < 1000*60*60*24*30 && <h5 style={{opacity: 0.5, fontStyle: 'italic'}}>Not what you expected? Try the <a target={'_blank'} href='https://old.neemek.com/'>old site</a></h5>}
         </main>
       </>
     </>
