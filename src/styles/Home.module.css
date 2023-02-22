@@ -392,3 +392,13 @@
 .unLink {
   text-decoration: none;
 }
+
+.aboutMeBody {
+  max-width: 25vw;
+  text-align: center;
+  font-size: large;
+}
+
+.aboutMeTitle {
+  font-size: 2rem;
+}
