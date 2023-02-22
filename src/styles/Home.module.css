@@ -305,7 +305,8 @@
 }
 
 
-.character:hover, .character:focus {
+.character:hover,
+.character:focus {
   animation-name: rotateDelayed;
   animation-timing-function: ease-in-out;
 }
@@ -315,6 +316,7 @@
   0% {
     transform: rotate(90deg);
   }
+
   25% {
     transform: rotate(0deg);
   }
@@ -324,6 +326,7 @@
   75% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(90deg);
   }
@@ -344,7 +347,8 @@
   transform: translate(-100%, -80%);
 }
 
-.character:hover>div>.desc, .character:focus>div>.desc {
+.character:hover>div>.desc,
+.character:focus>div>.desc {
   transform: translate(0%, -80%);
 }
 
@@ -361,7 +365,7 @@
 }
 
 .moreSpace {
-  padding:  8rem;
+  padding: 8rem;
 }
 
 .notFoundImage {
@@ -378,11 +382,12 @@
   justify-content: space-between;
 }
 
-.xList > * {
+.xList>* {
   margin: 1rem;
   transition: scale .1s ease-in-out;
 }
-.xList > *:hover {
+
+.xList>*:hover {
   scale: 1.1;
 }
 

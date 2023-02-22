@@ -31,16 +31,23 @@ body {
     background: var(--dark);
     color: var(--white);
   }
+
   * {
     color: var(--white);
   }
-  
+
 }
 
 h1 {
   font-size: 3rem;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
 }
 
@@ -50,7 +57,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-input, button {
+input,
+button {
   padding: .5rem;
   background: #ffffff40;
   border: var(--white) 2px solid;

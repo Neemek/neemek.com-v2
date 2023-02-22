@@ -39,7 +39,7 @@ const lightDark = '#70707070'
 const darkDark = '#d0d0d070'
 
 export function pickRandom<T>(from: T[]): T {
-  return from[Math.floor(Math.random()*from.length)]
+  return from[Math.floor(Math.random() * from.length)]
 }
 
 export default function Home() {
@@ -60,10 +60,10 @@ export default function Home() {
             <div className={styles.moreSpace}>
               <h1>Hi! I&apos;m <AnimatedGradientText className={inter.className} to={'#0700b8'} from={'#00ff88'} cycleDuration={96}>Neemek</AnimatedGradientText></h1>
               <h2>💿 Full-stack developer 💾</h2>
-              <h3 className={styles.spaceUp}><FaArrowLeft style={{translate: '0 10%'}}></FaArrowLeft> have a look</h3>
+              <h3 className={styles.spaceUp}><FaArrowLeft style={{ translate: '0 10%' }}></FaArrowLeft> have a look</h3>
             </div>
           </div>
-          {Date.now() - new Date(2023, 1, 20).getTime() < 1000*60*60*24*30 && <h5 style={{opacity: 0.5, fontStyle: 'italic'}}>Not what you expected? Try the <a href='https://old.neemek.com/'>old site</a></h5>}
+          {Date.now() - new Date(2023, 1, 20).getTime() < 1000 * 60 * 60 * 24 * 30 && <h5 style={{ opacity: 0.5, fontStyle: 'italic' }}>Not what you expected? Try the <a href='https://old.neemek.com/'>old site</a></h5>}
         </main>
       </>
     </>
@@ -76,7 +76,7 @@ export function SideBar() {
   </div>)
 }
 
-export function OGHead({title='👉neemek.com👈', description='', type='website', path='/'}) {
+export function OGHead({ title = '👉neemek.com👈', description = '', type = 'website', path = '/' }) {
   return (
     <>
       <meta property="og:title" content={title} />
@@ -88,38 +88,38 @@ export function OGHead({title='👉neemek.com👈', description='', type='websit
   )
 }
 
-function Character({children: char, i}: {children: string, i: number}) {
+function Character({ children: char, i }: { children: string, i: number }) {
   let [noun, setNoun] = useState(' ')
 
   useEffect(() => setNoun(pickRandom(getNouns('e'))), [])
-  
-  return (
-      <Link href={destinations[i] ?? ''} className={styles.unLink}>
-    <div tabIndex={i+1} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{cursor: colors[i] ? 'pointer' : 'unset'}} /* onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname =  ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} */ key={i}>
 
-      <AnimatedGradientText from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>
-        {char}
-        
-      </AnimatedGradientText>
-      <div>
-      {(
-        colors[i] !== undefined 
-        ? <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.025*description[i].length}s steps(${description[i].length}, end) .1s`}} from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>{description[i]}</AnimatedGradientText> 
-        : <AnimatedGradientText className={styles.desc} style={{transition: `all ${0.025*noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s`}} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
-        )}
+  return (
+    <Link href={destinations[i] ?? ''} className={styles.unLink}>
+      <div tabIndex={i + 1} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{ cursor: colors[i] ? 'pointer' : 'unset' }} /* onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname =  ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} */ key={i}>
+
+        <AnimatedGradientText from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>
+          {char}
+
+        </AnimatedGradientText>
+        <div>
+          {(
+            colors[i] !== undefined
+              ? <AnimatedGradientText className={styles.desc} style={{ transition: `all ${0.025 * description[i].length}s steps(${description[i].length}, end) .1s` }} from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>{description[i]}</AnimatedGradientText>
+              : <AnimatedGradientText className={styles.desc} style={{ transition: `all ${0.025 * noun.slice(1).length}s steps(${noun.slice(1).length}, end) .1s` }} from={darkDark} to={lightDark}>{noun.slice(1)}</AnimatedGradientText>
+          )}
         </div>
-    </div>
-        </Link>)
+      </div>
+    </Link>)
 }
 
-export function GradientText({children, to, from}: {children: ReactNode, to: string, from: string}): JSX.Element {
+export function GradientText({ children, to, from }: { children: ReactNode, to: string, from: string }): JSX.Element {
   return (<span className={styles.clipToBg} style={{
     background: `-webkit-linear-gradient(180deg, ${from}, ${to})`,
   }}>{children}</span>)
 }
 
-export function AnimatedGradientText({children, to, from, cycleDuration=64, className='', style={}}: {children: ReactNode, to: string, from: string, cycleDuration?: number, className?: string, style?: Object}): JSX.Element {
-  return (<span className={styles.clipToBg+' '+className} style={{
+export function AnimatedGradientText({ children, to, from, cycleDuration = 64, className = '', style = {} }: { children: ReactNode, to: string, from: string, cycleDuration?: number, className?: string, style?: Object }): JSX.Element {
+  return (<span className={styles.clipToBg + ' ' + className} style={{
     background: `-webkit-linear-gradient(180deg, ${from}, ${to}, ${from}) 0 0 / var(--bg-size) 100%`,
     animation: `move-bg ${cycleDuration}s infinite linear`,
     ...style
