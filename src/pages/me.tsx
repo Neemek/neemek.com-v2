@@ -7,6 +7,7 @@ import { GetServerSideProps, GetStaticProps } from "next"
 import AnimatedText from 'react-animated-text-content'
 
 import { calcAge } from '@/pages/api/age'
+import { combine as c } from "."
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,7 +32,8 @@ export default function AboutMePage({ age, iAm }: Props) {
           <div>
             <h1 className={inter.className}>About <AnimatedGradientText from={(colors[3] ?? '')[0]} to={(colors[3] ?? '')[1]}>Me</AnimatedGradientText></h1>
           </div>
-          <div><h1 className={inter.className + ' ' + styles.aboutMeTitle}><AnimatedText animationType={'lights'} type={'chars'} duration={0.1} interval={0.06}>{iAm}</AnimatedText></h1> <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript and Java, plus Web standards and API integration.</p></div>
+          <div><h1 className={c(inter.className, styles.aboutMeTitle)}><AnimatedText animationType={'lights'} type={'chars'} duration={0.1} interval={0.06}>{iAm}</AnimatedText></h1>
+            <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript/Typescript and Java, plus Web standards and API integration.</p><p style={{ marginTop: '.5rem' }} className={styles.aboutMeBody}>I have worked on projects with custom APIs, OAuth integration, and webservers with SSR and SPA. Currently working on with NEXT.js</p></div>
           <div></div>
         </main>
       </>
