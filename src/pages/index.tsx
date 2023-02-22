@@ -42,7 +42,13 @@ export function pickRandom<T>(from: T[]): T {
   return from[Math.floor(Math.random() * from.length)]
 }
 
-export const combine = (...args: string[]) => args.join(' ')
+/**
+ * Combine classnames into one
+ * @param classes classNames to join
+ * @returns {string} a combined class
+ */
+
+export const combine = (...classes: string[]) => classes.join(' ')
 
 export default function Home() {
 
