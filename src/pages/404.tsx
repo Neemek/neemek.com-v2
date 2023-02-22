@@ -5,6 +5,11 @@ import { OGHead, SideBar, pickRandom } from "."
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { getCatWithTie } from "./api/cat-tie";
+import { GetServerSideProps, GetStaticProps } from "next";
+
+interface Props {
+  image: string
+}
 
 const inter = Inter({subsets: ['latin']})
 const notfoundInfos = [
@@ -14,11 +19,9 @@ const notfoundInfos = [
   // ""
 ]
 
-export default function NotFoundPage() {
-  let [image, setImage] = useState("")
+export default function NotFoundPage({image}: Props) {
   let [info, setInfo] = useState("me and my armada of business cats are currently working on this")
   
-  useEffect(() => { getCatWithTie().then(url => setImage(url)) }, [])
   useEffect(() => setInfo(pickRandom(notfoundInfos)), [])
 
   return (
@@ -44,4 +47,12 @@ export default function NotFoundPage() {
         </>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      image: await getCatWithTie()
+    }
+  }
 }
