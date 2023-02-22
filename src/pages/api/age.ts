@@ -4,7 +4,7 @@ type Data = {
   age: number
 }
 
-export const calcAge = () => Math.floor((Date.now()-new Date(2000, 0).getTime())/(1000*60*60*24*365))
+export const calcAge = () => Math.floor((Date.now() - new Date(2000, 0).getTime()) / (1000 * 60 * 60 * 24 * 365))
 
 export default function handler(
   req: NextApiRequest,

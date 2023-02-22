@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { nouns } from './nouns'
 
 type Data = {
-    query: string[]
+  query: string[]
 }
 
 const startsWith = (text: string) => (v: string) => v.startsWith(text)
@@ -15,5 +15,5 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({query: getNouns(req.query['startsWith']?.toString() ?? '')})
+  res.status(200).json({ query: getNouns(req.query['startsWith']?.toString() ?? '') })
 }
