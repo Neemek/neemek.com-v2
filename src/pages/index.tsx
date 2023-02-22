@@ -42,6 +42,8 @@ export function pickRandom<T>(from: T[]): T {
   return from[Math.floor(Math.random() * from.length)]
 }
 
+export const combine = (...args: string[]) => args.join(' ')
+
 export default function Home() {
 
   return (
