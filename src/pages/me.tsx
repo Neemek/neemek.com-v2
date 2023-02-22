@@ -29,7 +29,7 @@ export default function AboutMePage({ age }: Props) {
           <div>
             <h1 className={inter.className}>About <AnimatedGradientText from={(colors[3] ?? '')[0]} to={(colors[3] ?? '')[1]}>Me</AnimatedGradientText></h1>
           </div>
-          <div><h1 className={inter.className+' '+styles.aboutMeTitle}>I'm Neemek</h1> <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript and Java, plus Web standards and API integration.</p></div>
+          <div><h1 className={inter.className+' '+styles.aboutMeTitle}>I&apos;m Neemek</h1> <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript and Java, plus Web standards and API integration.</p></div>
           <div></div>
         </main>
       </>
