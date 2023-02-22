@@ -294,14 +294,12 @@
   font-size: 4rem;
   text-align: center;
   font-weight: 700;
-  /*transform: rotate(90deg);*/
-  transition: transform ease .2s;
   user-select: none;
   background: inherit;
   z-index: 2;
   animation-name: rotateDelayedOut;
   animation-duration: .5s;
-  animation-direction: normal;
+  animation-direction: alternate;
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -310,7 +308,6 @@
 .character:hover, .character:focus {
   animation-name: rotateDelayed;
   animation-timing-function: ease-in-out;
-  transform: rotate(0deg);
 }
 
 
