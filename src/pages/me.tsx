@@ -1,19 +1,21 @@
 import Head from "next/head"
 import { Inter } from "@next/font/google"
 import styles from '@/styles/Home.module.css'
-import { AnimatedGradientText, OGHead, SideBar, colors } from "."
+import { AnimatedGradientText, OGHead, SideBar, colors, pickRandom } from "."
 import { FaDiscord, FaStackOverflow, FaTwitter } from 'react-icons/fa'
-import { GetServerSideProps } from "next"
+import { GetServerSideProps, GetStaticProps } from "next"
+import AnimatedText from 'react-animated-text-content'
 
 import { calcAge } from '@/pages/api/age'
 
 const inter = Inter({ subsets: ['latin'] })
 
 interface Props {
-  age: number
+  age: number,
+  iAm: string
 }
 
-export default function AboutMePage({ age }: Props) {
+export default function AboutMePage({ age, iAm }: Props) {
   return (
     <>
       <Head>
@@ -29,7 +31,7 @@ export default function AboutMePage({ age }: Props) {
           <div>
             <h1 className={inter.className}>About <AnimatedGradientText from={(colors[3] ?? '')[0]} to={(colors[3] ?? '')[1]}>Me</AnimatedGradientText></h1>
           </div>
-          <div><h1 className={inter.className+' '+styles.aboutMeTitle}>I&apos;m Neemek</h1> <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript and Java, plus Web standards and API integration.</p></div>
+          <div><h1 className={inter.className+' '+styles.aboutMeTitle}><AnimatedText animationType={'lights'} type={'chars'} duration={0.1} interval={0.06}>{iAm}</AnimatedText></h1> <p className={styles.aboutMeBody}>A {age} year old full-stack developer with experience in Python, Javascript and Java, plus Web standards and API integration.</p></div>
           <div></div>
         </main>
       </>
@@ -37,10 +39,22 @@ export default function AboutMePage({ age }: Props) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+const amI = [
+  "Je suis Neemek",
+  "Ich bin Neemek",
+  "I am Neemek",
+  "Jeg er Neemek",
+  "Eu sunt Neemek",
+  "Jag är Neemek",
+  "Já jsem Neemek",
+  "Jestem Neemek"
+]
+
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
-      age: calcAge()
+      age: calcAge(),
+      iAm: pickRandom(amI)
     }
   }
 }
