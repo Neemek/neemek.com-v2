@@ -299,16 +299,16 @@
   z-index: 2;
   animation-name: rotateDelayedOut;
   animation-duration: .5s;
-  animation-direction: alternate;
+  animation-direction: forwards;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
 
 
 .character:hover,
 .character:focus {
   animation-name: rotateDelayed;
-  animation-timing-function: ease-in-out;
 }
 
 
