@@ -25,7 +25,7 @@ export default function ContactPage() {
           <div>
             <h1 className={inter.className}><AnimatedGradientText from={(colors[5] ?? '')[0]} to={(colors[5] ?? '')[1]}>Kontact</AnimatedGradientText> me</h1>
           </div>
-          <div style={{ translate: '0 -1000%' }}>
+          <div>
             <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <button onClick={() => {
               if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
@@ -40,6 +40,7 @@ export default function ContactPage() {
               }
             }}>Submit</button>
           </div>
+          <div></div>
         </main>
       </>
     </>
