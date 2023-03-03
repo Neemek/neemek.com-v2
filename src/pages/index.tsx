@@ -104,7 +104,7 @@ function Character({ children: char, i }: { children: string, i: number }) {
 
   return (
     <Link href={destinations[i] ?? ''} className={styles.unLink}>
-      <div tabIndex={i + 1} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{ cursor: colors[i] ? 'pointer' : 'unset' }} /* onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname =  ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} */ key={i}>
+      <div tabIndex={0} className={[styles.character, inter.className, colors[i] && styles.rotate].join(' ')} style={{ cursor: colors[i] ? 'pointer' : 'unset' }} /* onKeyUp={(e) => { if (e.key.toLocaleLowerCase() === "enter" && destinations[i] !== undefined) { location.pathname =  ?? '/'; }}} onClick={() => { if (destinations[i] !== undefined) location.pathname = destinations[i] ?? "/"}} */ key={i}>
 
         <AnimatedGradientText from={(colors[i] ?? [darkDark])[0]} to={(colors[i] ?? ['', lightDark])[1]}>
           {char}
