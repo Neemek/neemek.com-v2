@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Head>
         <meta name="description" content="Neemek's home website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>External resources</title>
         <OGHead title='Kontact me' description="Submit your email and i'll be in touch!" path="/external"></OGHead>
       </Head>
