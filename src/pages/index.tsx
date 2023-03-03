@@ -87,6 +87,7 @@ export function SideBar() {
 export function OGHead({ title = '👉neemek.com👈', description = '', type = 'website', path = '/' }) {
   return (
     <>
+      <link rel="manifest" href="manifest.json" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
