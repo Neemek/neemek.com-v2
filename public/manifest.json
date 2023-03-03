@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "👉neemek dot com👈",
+    "short_name": "Neemek.com",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Neemeks home website",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "72x72 96x96 128x128 256x256"
+        }
+    ]
+}

@@ -58,7 +58,7 @@ export default function Home() {
         <title>👉neemek.com👈</title>
         <meta name="description" content="Neemek's home website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <OGHead description="Neemek's website"></OGHead>
       </Head>
       <>
@@ -87,6 +87,7 @@ export function SideBar() {
 export function OGHead({ title = '👉neemek.com👈', description = '', type = 'website', path = '/' }) {
   return (
     <>
+      <link rel="manifest" href="manifest.json" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
