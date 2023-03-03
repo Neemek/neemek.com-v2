@@ -58,7 +58,7 @@ export default function Home() {
         <title>👉neemek.com👈</title>
         <meta name="description" content="Neemek's home website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <OGHead description="Neemek's website"></OGHead>
       </Head>
       <>

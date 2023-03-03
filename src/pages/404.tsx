@@ -29,7 +29,7 @@ export default function NotFoundPage({ image }: Props) {
       <Head>
         <meta name="description" content="Neemek's home website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>404 - Not found ¯\_(ツ)_/¯</title>
         <OGHead title='404 - Not found' description="This page could not be found!" path="/404"></OGHead>
       </Head>
