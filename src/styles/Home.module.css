@@ -404,3 +404,21 @@
 .aboutMeTitle {
   font-size: 2rem;
 }
+
+.largerBox {
+  width: 80vw;
+  height: 50vh;
+}
+
+.contactLink {
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.contacting {
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  gap: 1rem;
+}
