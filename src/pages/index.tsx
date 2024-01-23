@@ -71,7 +71,6 @@ export default function Home() {
               <h3 className={styles.spaceUp}><FaArrowLeft style={{ translate: '0 10%' }}></FaArrowLeft> have a look</h3>
             </div>
           </div>
-          <p style={{ textAlign: 'center', opacity: 0.5, fontStyle: 'italic' }}>Not what you expected? Try the <a href='https://old.neemek.com/'>old site</a></p>
         </main>
       </>
     </>
